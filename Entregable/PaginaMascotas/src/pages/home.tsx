@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react';  
 import { MapPin, PawPrint, ShowerHead, Stethoscope } from 'lucide-react';
 
 const vetClinics = [
@@ -16,6 +16,12 @@ const vetClinics = [
   },
   {
     name: 'Pet Life Center',
+    location: 'Jr. San Martín 789, Arequipa',
+    services: ['Guardería', 'Baño', 'Chequeo general'],
+    image: 'https://images.unsplash.com/photo-1601758123927-196d7be3c685',
+  },
+  {
+    name: 'Perros malos xd',
     location: 'Jr. San Martín 789, Arequipa',
     services: ['Guardería', 'Baño', 'Chequeo general'],
     image: 'https://images.unsplash.com/photo-1601758123927-196d7be3c685',
