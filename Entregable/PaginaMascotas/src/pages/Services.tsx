@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect, JSX } from "react"
 import {
   Search,
@@ -75,7 +73,7 @@ export default function BuscadorVeterinarias() {
       horario: "Lun-Vie: 9:00-20:00, Sáb-Dom: 10:00-16:00",
       calificacion: 4.8,
       distancia: "0.5 km",
-      imagen: "/placeholder.svg?height=150&width=250",
+      imagen: "https://st2.depositphotos.com/5056293/9389/v/450/depositphotos_93899252-stock-illustration-vector-sign-veterinary.jpg",
       servicios: [1, 2, 3, 4, 5, 6, 7],
       coordenadas: { lat: 19.4326, lng: -99.1332 },
     },
@@ -87,7 +85,7 @@ export default function BuscadorVeterinarias() {
       horario: "24 horas, todos los días",
       calificacion: 4.9,
       distancia: "1.2 km",
-      imagen: "/placeholder.svg?height=150&width=250",
+      imagen: "https://static.vecteezy.com/system/resources/previews/008/249/343/non_2x/veterinary-logo-cat-and-dog-logo-design-pet-care-vet-clinic-logo-pet-clinic-vector.jpg",
       servicios: [1, 2, 4, 5, 6, 8, 9],
       coordenadas: { lat: 19.4426, lng: -99.1432 },
     },
@@ -99,7 +97,7 @@ export default function BuscadorVeterinarias() {
       horario: "Lun-Sáb: 10:00-19:00, Dom: Cerrado",
       calificacion: 4.5,
       distancia: "1.8 km",
-      imagen: "/placeholder.svg?height=150&width=250",
+      imagen: "https://st3.depositphotos.com/1364916/32746/v/450/depositphotos_327463754-stock-illustration-logo-dog-and-cat-silhouette.jpg",
       servicios: [1, 2, 3, 7],
       coordenadas: { lat: 19.4226, lng: -99.1232 },
     },
@@ -111,7 +109,7 @@ export default function BuscadorVeterinarias() {
       horario: "Lun-Dom: 9:00-21:00",
       calificacion: 4.7,
       distancia: "2.3 km",
-      imagen: "/placeholder.svg?height=150&width=250",
+      imagen: "https://img.freepik.com/vector-premium/linda-tienda-mascotas-logo-vector-icono-ilustracion_441059-308.jpg?semt=ais_hybrid&w=740",
       servicios: [1, 2, 4, 5, 6, 9],
       coordenadas: { lat: 19.4326, lng: -99.1132 },
     },
@@ -123,7 +121,7 @@ export default function BuscadorVeterinarias() {
       horario: "Lun-Vie: 8:00-18:00, Sáb: 9:00-14:00",
       calificacion: 4.3,
       distancia: "3.1 km",
-      imagen: "/placeholder.svg?height=150&width=250",
+      imagen: "https://st2.depositphotos.com/1007168/5524/i/450/depositphotos_55249403-stock-photo-veterinary-blue-circle-label-with.jpg",
       servicios: [1, 2, 3, 5],
       coordenadas: { lat: 19.4126, lng: -99.1532 },
     },
@@ -135,7 +133,7 @@ export default function BuscadorVeterinarias() {
       horario: "Lun-Sáb: 9:00-19:00, Dom: 10:00-15:00",
       calificacion: 4.6,
       distancia: "3.5 km",
-      imagen: "/placeholder.svg?height=150&width=250",
+      imagen: "https://previews.123rf.com/images/uvaconcept/uvaconcept1512/uvaconcept151200261/49309743-plantilla-de-logotipo-para-la-cl%C3%ADnica-veterinaria-con-el-gato-y-el-perro.jpg",
       servicios: [1, 2, 3, 4, 5, 8],
       coordenadas: { lat: 19.4526, lng: -99.1632 },
     },
@@ -542,37 +540,7 @@ export default function BuscadorVeterinarias() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <div className="flex items-center">
-                <Heart className="h-6 w-6 text-teal-400 mr-2" />
-                <span className="text-xl font-bold">BuscaVet</span>
-              </div>
-              <p className="text-sm text-gray-400 mt-1">El mejor buscador de veterinarias</p>
-            </div>
-
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Términos y condiciones
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Privacidad
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Contacto
-              </a>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400 text-sm">
-            <p>© {new Date().getFullYear()} BuscaVet. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
+   
     </div>
   )
 }

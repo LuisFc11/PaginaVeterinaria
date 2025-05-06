@@ -1,4 +1,3 @@
-"use client"
 
 import {
   Heart,
@@ -29,17 +28,23 @@ export default function VeterinaryClinic() {
                 tu compañero fiel.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <button className="bg-white text-teal-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
-                  Nuestros Servicios
-                </button>
-                <button className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-teal-700 transition-colors">
-                  Contactar
-                </button>
+              <a href="#servicios">
+  <button className="bg-white text-teal-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
+    Nuestros Servicios
+  </button>
+</a>
+
+<a href="/contact">
+  <button className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-teal-700 transition-colors">
+    Contactar
+  </button>
+</a>
+
               </div>
             </div>
             <div className="md:w-1/2">
               <img
-                src="/placeholder.svg?height=400&width=500"
+                src="https://imagenes.heraldo.es/files/image_990_556/uploads/imagenes/2023/10/19/veterinario-gsc1.jpeg"
                 alt="Veterinario con mascota"
                 className="rounded-lg shadow-xl"
               />
@@ -116,7 +121,7 @@ export default function VeterinaryClinic() {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src="https://cdn.nubika.es/wp-content/uploads/2021/05/hospital-de-perros.jpg"
                 alt="Equipo veterinario"
                 className="rounded-lg shadow-xl"
               />
@@ -165,19 +170,19 @@ export default function VeterinaryClinic() {
               {
                 name: "María González",
                 pet: "Dueña de Luna",
-                image: "/placeholder.svg?height=100&width=100",
+                image: "https://phantom-marca-us.unidadeditorial.es/81a76985acc8427ee1ba0f3a1e0654dc/resize/828/f/jpg/assets/multimedia/imagenes/2022/12/20/16715060077928.jpg",
                 text: "El equipo de PetCare ha cuidado de mi perrita Luna desde que era un cachorro. Su profesionalismo y cariño hacia los animales es excepcional.",
               },
               {
                 name: "Carlos Rodríguez",
                 pet: "Dueño de Max",
-                image: "/placeholder.svg?height=100&width=100",
+                image: "https://estaticos.elcolombiano.com/binrepository/848x565/22c0/780d565/none/11101/JPRP/foto-neymar-jr-el-gran-ausente-en_47447903_20250320153223.jpg",
                 text: "Cuando Max necesitó una cirugía de emergencia, el equipo de PetCare estuvo disponible de inmediato. No puedo estar más agradecido por su rápida respuesta.",
               },
               {
                 name: "Ana Martínez",
                 pet: "Dueña de Milo",
-                image: "/placeholder.svg?height=100&width=100",
+                image: "https://media.a24.com/p/c55dbdd613d2f2e8bda56310d6458e2f/adjuntos/296/imagenes/008/358/0008358861/1200x675/smart/real-madrids-portuguese-forward-cristiano-ronaldo-celebrates-after-scoring-second-goal-during-the-uefa-champions-league-quarter-final-first-leg-football-match-between-juventus-and-real-madrid-at-the-allianz-stadium-in-turin-on-april-3-2018-afp-phot.jpg",
                 text: "Los servicios de peluquería son excelentes. Mi gato Milo siempre regresa feliz y hermoso. Recomiendo PetCare a todos mis amigos con mascotas.",
               },
             ].map((testimonial, index) => (
@@ -341,78 +346,7 @@ export default function VeterinaryClinic() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <Heart className="h-8 w-8 text-teal-400" />
-                <span className="ml-2 text-xl font-bold">PetCare Veterinaria</span>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Cuidado profesional y compasivo para tu mascota. Más de 15 años de experiencia nos respaldan.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Enlaces Rápidos</h4>
-              <ul className="space-y-2">
-                {["Inicio", "Servicios", "Nosotros", "Testimonios", "Contacto"].map((item) => (
-                  <li key={item}>
-                    <a href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-teal-400 transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Servicios</h4>
-              <ul className="space-y-2">
-                {["Consulta General", "Vacunación", "Peluquería", "Cirugía", "Emergencias", "Nutrición"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-bold mb-4">Síguenos</h4>
-              <div className="flex space-x-4 mb-4">
-                {["facebook", "twitter", "instagram", "youtube"].map((social) => (
-                  <a key={social} href="#" className="bg-gray-700 hover:bg-teal-600 transition-colors p-2 rounded-full">
-                    <span className="sr-only">{social}</span>
-                    <div className="h-5 w-5"></div>
-                  </a>
-                ))}
-              </div>
-              <h4 className="text-lg font-bold mb-4">Suscríbete</h4>
-              <form className="flex">
-                <input
-                  type="email"
-                  placeholder="Tu email"
-                  className="px-4 py-2 rounded-l-md w-full focus:outline-none text-gray-800"
-                />
-                <button
-                  type="submit"
-                  className="bg-teal-600 text-white px-4 py-2 rounded-r-md hover:bg-teal-700 transition-colors"
-                >
-                  Enviar
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} PetCare Veterinaria. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
+    
     </div>
   )
 }
