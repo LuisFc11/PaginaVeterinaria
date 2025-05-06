@@ -155,6 +155,28 @@ export default function VeterinaryClinic() {
         </div>
       </section>
 
+            {/* Appointment Section */}
+            <section className="py-16 bg-teal-600 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-8 md:mb-0 text-center md:text-left">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">¿Tu mascota necesita atención?</h2>
+              <p className="text-teal-100">Agenda una cita hoy mismo y recibe atención prioritaria.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <button className="bg-white text-teal-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors flex items-center justify-center">
+                <Calendar className="h-5 w-5 mr-2" />
+                Agendar Cita
+              </button>
+              <button className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-teal-700 transition-colors flex items-center justify-center">
+                <Phone className="h-5 w-5 mr-2" />
+                Llamar Ahora
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section id="testimonios" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -201,147 +223,6 @@ export default function VeterinaryClinic() {
                 <p className="text-gray-600 italic">"{testimonial.text}"</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Appointment Section */}
-      <section className="py-16 bg-teal-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-8 md:mb-0 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">¿Tu mascota necesita atención?</h2>
-              <p className="text-teal-100">Agenda una cita hoy mismo y recibe atención prioritaria.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="bg-white text-teal-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors flex items-center justify-center">
-                <Calendar className="h-5 w-5 mr-2" />
-                Agendar Cita
-              </button>
-              <button className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-teal-700 transition-colors flex items-center justify-center">
-                <Phone className="h-5 w-5 mr-2" />
-                Llamar Ahora
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contacto" className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contáctanos</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Estamos aquí para responder tus preguntas y atender a tu mascota.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1">
-              <div className="bg-white p-6 rounded-lg shadow-lg h-full">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">Información de Contacto</h3>
-
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <MapPin className="h-6 w-6 text-teal-600 mr-3 mt-1" />
-                    <div>
-                      <p className="font-medium text-gray-800">Dirección</p>
-                      <p className="text-gray-600">Av. Principal 123, Ciudad</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <Phone className="h-6 w-6 text-teal-600 mr-3 mt-1" />
-                    <div>
-                      <p className="font-medium text-gray-800">Teléfono</p>
-                      <p className="text-gray-600">+123 456 7890</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <Mail className="h-6 w-6 text-teal-600 mr-3 mt-1" />
-                    <div>
-                      <p className="font-medium text-gray-800">Email</p>
-                      <p className="text-gray-600">info@petcare.com</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="font-medium text-gray-800 mb-2">Horario de Atención</p>
-                    <div className="text-gray-600">
-                      <p>Lunes - Viernes: 9:00 - 20:00</p>
-                      <p>Sábados: 10:00 - 18:00</p>
-                      <p>Domingos: 10:00 - 14:00</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-2">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h3>
-
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-gray-700 mb-2">
-                        Nombre
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                        placeholder="Tu nombre"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-gray-700 mb-2">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                        placeholder="Tu email"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-gray-700 mb-2">
-                      Asunto
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                      placeholder="Asunto del mensaje"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 mb-2">
-                      Mensaje
-                    </label>
-                    <textarea
-                      id="message"
-                      rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                      placeholder="Tu mensaje"
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="bg-teal-600 text-white px-6 py-3 rounded-md font-medium hover:bg-teal-700 transition-colors w-full md:w-auto"
-                  >
-                    Enviar Mensaje
-                  </button>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </section>
