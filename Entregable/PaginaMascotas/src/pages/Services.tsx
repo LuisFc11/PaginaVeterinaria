@@ -1,4 +1,6 @@
 import { useState, useEffect, JSX } from "react"
+import CitasModal from "../components/citasModal";
+
 import {
   Search,
   MapPin,
@@ -181,6 +183,10 @@ export default function BuscadorVeterinarias() {
   // Obtener el icono del servicio por ID
   const getIconoServicio = (id: number) => {
     return servicios.find((s) => s.id === id)?.icono || null
+  }
+
+  function setIsModalOpen(arg0: boolean): void {
+    throw new Error("Function not implemented.");
   }
 
   return (
@@ -436,8 +442,9 @@ export default function BuscadorVeterinarias() {
                         <Phone className="h-4 w-4 mr-2" />
                         Llamar ahora
                       </button>
-                      <button className="w-full border border-teal-600 text-teal-600 px-4 py-2 rounded-md font-medium hover:bg-teal-50 transition-colors flex items-center justify-center">
+                      <button     onClick={() => setIsModalOpen(true)} className="w-full border border-teal-600 text-teal-600 px-4 py-2 rounded-md font-medium hover:bg-teal-50 transition-colors flex items-center justify-center">
                         <Clock className="h-4 w-4 mr-2" />
+
                         Agendar cita
                       </button>
                     </div>

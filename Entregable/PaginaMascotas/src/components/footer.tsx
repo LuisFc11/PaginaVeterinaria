@@ -9,7 +9,7 @@ function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <Heart className="h-8 w-8 text-teal-400" />
-              <span className="ml-2 text-xl font-bold">PetCare Veterinaria</span>
+              <span className="ml-2 text-xl font-bold">CanFiru Veterinaria</span>
             </div>
             <p className="text-gray-400 mb-4">
               Cuidado profesional y compasivo para tu mascota. Más de 15 años de experiencia nos respaldan.

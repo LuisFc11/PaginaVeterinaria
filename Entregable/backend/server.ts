@@ -7,14 +7,41 @@ const prisma = new PrismaClient();
 const port = 3000;
 
 app.use(cors());
+app.use(express.json());
 
-app.get("/lugares", async (req, res) => {
+// POST /citas — guarda los datos del formulario directamente
+app.post("/citas", async (req, res) => {
+  const {
+    nombreDuenio,
+    telefono,
+    correo,
+    nombreMascota,
+    especie,
+    raza,
+    motivo,
+    fecha,
+    hora,
+  } = req.body;
+
   try {
-    const lugares = await prisma.lugar.findMany();
-    res.json(lugares);
+    const cita = await prisma.cita.create({
+      data: {
+        nombreDuenio,
+        telefono,
+        correo,
+        nombreMascota,
+        especie,
+        raza,
+        motivo,
+        fecha: new Date(fecha),
+        hora,
+      },
+    });
+
+    res.status(201).json({ mensaje: "Cita registrada con éxito", cita });
   } catch (error) {
-    console.error("Error al obtener lugares:", error);
-    res.status(500).json({ error: "Error del servidor" });
+    console.error("Error al guardar cita:", error);
+    res.status(500).json({ error: "No se pudo registrar la cita" });
   }
 });
 

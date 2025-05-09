@@ -1,4 +1,4 @@
-generator PaginaMascotas {
+generator client {
   provider = "prisma-client-js"
 }
 
@@ -7,26 +7,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model lugar {
-  id        Int    @id @default(autoincrement())
-  nombre    String
-  direccion String
-  servicio  String
+model cita {
+  id         Int      @id @default(autoincrement())
+  fecha      DateTime
+  estado     String
+  servicioId Int
+  usuarioId  Int
+  servicio   servicio @relation(fields: [servicioId], references: [id], map: "Cita_servicioId_fkey")
+  usuario    usuario  @relation(fields: [usuarioId], references: [id], map: "Cita_usuarioId_fkey")
+
+  @@index([servicioId], map: "Cita_servicioId_fkey")
+  @@index([usuarioId], map: "Cita_usuarioId_fkey")
+}
+
+model servicio {
+  id          Int    @id @default(autoincrement())
+  nombre      String
+  descripcion String
+  cita        cita[]
 }
 
 model usuario {
-  id       Int      @id @default(autoincrement())
-  nombre   String
-  email    String   @unique(map: "Usuario_email_key")
-  password String
-  creadoEn DateTime @default(now())
-}
-
-model Cita {
-  id        Int      @id @default(autoincrement())
-  nombre    String
-  telefono  String
-  fecha     DateTime
-  servicio  String
-  createdAt DateTime @default(now())
+  id             Int      @id @default(autoincrement())
+  nombre         String
+  apellido       String
+  correo         String   @unique(map: "Usuario_correo_key")
+  fecha_registro DateTime @default(now())
+  cita           cita[]
 }
