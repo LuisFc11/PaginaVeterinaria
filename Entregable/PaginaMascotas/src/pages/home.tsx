@@ -24,7 +24,7 @@ export default function VeterinaryClinic() {
             <div className="md:w-1/2 text-white mb-10 md:mb-0">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Cuidado profesional para tu mascota</h1>
               <p className="text-lg mb-8">
-                En PetCare Veterinaria ofrecemos servicios médicos de alta calidad para asegurar la salud y bienestar de
+                En CanFiru Veterinaria ofrecemos servicios médicos de alta calidad para asegurar la salud y bienestar de
                 tu compañero fiel.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
