@@ -36,7 +36,7 @@ export default function VeterinaryClinic() {
 
 <a href="/contact">
   <button className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-teal-700 transition-colors">
-    Contactar
+    Contactos
   </button>
 </a>
 
