@@ -21,7 +21,7 @@ export default function ContactSection() {
     phone: "",
     petName: "",
     petType: "",
-    message: "",
+    message: "",  
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
