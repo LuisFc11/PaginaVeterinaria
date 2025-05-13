@@ -18,7 +18,7 @@ interface Veterinarian {
   description: string;
 }
 
-type LocationType = "All" | "North" | "South" | "East" | "West" | "Central";
+type LocationType = "All" | "Norte" | "Sur" | "Este" | "Oeste" | "Central";
 type SortType = "rating" | "experience" | "name";
 
 // Data
@@ -27,173 +27,191 @@ const veterinarians: Veterinarian[] = [
     id: "vet-001",
     name: "Dr. Sarah Johnson",
     photo: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Small Animal Medicine",
+    specialty: "Medicina de Animales Pequeños",
     experience: 8,
-    location: "North",
-    availability: ["Mon", "Tue", "Wed", "Fri"],
+    location: "Norte",
+    availability: ["Lunes", "Martes", "Viernes", "Sabado"],
     rating: 4.8,
     contact: {
       phone: "(555) 123-4567",
       email: "sarah.johnson@vetclinic.com"
     },
-    description: "Dr. Johnson specializes in preventive care and treatment for dogs, cats, and small exotic pets with a focus on geriatric medicine."
-  },
+     description: "La Dra. Johnson se especializa en atención preventiva y tratamiento para perros, gatos y mascotas exóticas pequeñas, con un enfoque en medicina geriátrica."
+   },
   {
     id: "vet-002",
     name: "Dr. Michael Rodriguez",
-    photo: "https://images.pexels.com/photos/5330961/pexels-photo-5330961.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Surgery",
+    photo: "https://media.istockphoto.com/id/1995860815/es/foto/mujer-veterinaria-sosteniendo-al-perro-jack-russell.jpg?s=612x612&w=0&k=20&c=ZLFwLWVnPXnCx876vI312OhVUUOEU5Z_9ZHQfvBS4jk=",
+    specialty: "Cirugía",
     experience: 12,
     location: "Central",
-    availability: ["Mon", "Wed", "Thu", "Fri"],
+    availability: ["Martes", "Jueves", "Viernes", "Domingo"],
     rating: 4.9,
     contact: {
       phone: "(555) 234-5678",
       email: "michael.rodriguez@vetclinic.com"
     },
-    description: "As our lead surgeon, Dr. Rodriguez performs both routine and complex surgical procedures, specializing in orthopedic and soft tissue surgeries."
+    description: "Como nuestro cirujano principal, el Dr. Rodriguez realiza procedimientos quirúrgicos tanto rutinarios como complejos, con especialización en cirugía ortopédica y de tejidos blandos."
   },
   {
     id: "vet-003",
     name: "Dr. Emily Chen",
     photo: "https://images.pexels.com/photos/6234608/pexels-photo-6234608.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Dermatology",
+    specialty: "Dermatología",
     experience: 6,
-    location: "South",
-    availability: ["Tue", "Wed", "Thu", "Sat"],
+    location: "Sur",
+    availability: ["Lunes", "Miercoles", "Sabado", "Domingo"],
     rating: 4.7,
     contact: {
       phone: "(555) 345-6789",
       email: "emily.chen@vetclinic.com"
     },
-    description: "Dr. Chen specializes in diagnosing and treating various skin conditions in both companion and exotic animals."
+     description: "La Dra. Chen se especializa en el diagnóstico y tratamiento de diversas afecciones cutáneas en animales de compañía y exóticos."
   },
   {
     id: "vet-004",
     name: "Dr. James Wilson",
-    photo: "https://images.pexels.com/photos/8942920/pexels-photo-8942920.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Exotic Animals",
+    photo: "https://s3.nuvemvet.com/blog/wp-content/uploads/2022/05/18161530/atendimento-2.jpg",
+    specialty: "Animales Exóticos",
     experience: 10,
-    location: "East",
-    availability: ["Mon", "Tue", "Thu", "Fri", "Sat"],
+    location: "Oeste",
+    availability: ["Martes", "Miercoles", "Viernes", "Sabado", "Domingo"],
     rating: 4.6,
     contact: {
       phone: "(555) 456-7890",
       email: "james.wilson@vetclinic.com"
     },
-    description: "With a passion for exotic species, Dr. Wilson provides specialized care for birds, reptiles, amphibians, and small mammals."
+   description: "Con una pasión por las especies exóticas, el Dr. Wilson brinda atención especializada a aves, reptiles, anfibios y pequeños mamíferos."
   },
   {
     id: "vet-005",
     name: "Dr. Lisa Martinez",
     photo: "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Cardiology",
+    specialty: "Cardiología",
     experience: 15,
-    location: "West",
-    availability: ["Wed", "Thu", "Fri", "Sat"],
+    location: "Este",
+    availability: ["Martes", "Miercoles", "Jueves", "Domingo"],
     rating: 4.9,
     contact: {
       phone: "(555) 567-8901",
       email: "lisa.martinez@vetclinic.com"
     },
-    description: "Dr. Martinez diagnoses and treats heart diseases in companion animals, with a special interest in congenital heart defects."
+   description: "La Dra. Martinez diagnostica y trata enfermedades cardíacas en animales de compañía, con un interés especial en defectos cardíacos congénitos."
   },
   {
     id: "vet-006",
     name: "Dr. Robert Kim",
-    photo: "https://images.pexels.com/photos/6234723/pexels-photo-6234723.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Neurology",
+    photo: "https://cdnx.jumpseller.com/movet/image/25779061/resize/1200/1200?1717558738",
+    specialty: "Neurología",
     experience: 9,
-    location: "North",
-    availability: ["Mon", "Tue", "Wed", "Fri"],
+    location: "Norte",
+    availability: ["Martes", "Jueves", "Viernes", "Domingo"],
     rating: 4.7,
     contact: {
       phone: "(555) 678-9012",
       email: "robert.kim@vetclinic.com"
     },
-    description: "Dr. Kim specializes in neurological disorders and offers advanced diagnostic services including MRI interpretation."
+    description: "El Dr. Kim se especializa en trastornos neurológicos y ofrece servicios de diagnóstico avanzado, incluyendo interpretación de resonancia magnética."
   },
   {
     id: "vet-007",
     name: "Dr. Sophia Patel",
     photo: "https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Dentistry",
+    specialty: "Odontología",
     experience: 7,
     location: "Central",
-    availability: ["Tue", "Wed", "Thu", "Sat"],
+    availability: ["Miercoles", "Viernes", "Sabado", "Domingo"],
     rating: 4.8,
     contact: {
       phone: "(555) 789-0123",
       email: "sophia.patel@vetclinic.com"
     },
-    description: "Dr. Patel focuses on preventive dental care and complex dental procedures for all companion animals."
+     description: "La Dra. Patel se enfoca en el cuidado dental preventivo y en procedimientos dentales complejos para todos los animales de compañía."
   },
   {
     id: "vet-008",
     name: "Dr. Thomas Wright",
     photo: "https://images.pexels.com/photos/6749773/pexels-photo-6749773.jpeg?auto=compress&cs=tinysrgb&w=800",
-    specialty: "Emergency Medicine",
+    specialty: "Medicina de Urgencias",
     experience: 14,
-    location: "South",
-    availability: ["Mon", "Wed", "Fri", "Sat", "Sun"],
+    location: "Sur",
+    availability: ["Lunes", "Miercoles", "Jueves", "Domingo"],
     rating: 4.9,
     contact: {
       phone: "(555) 890-1234",
       email: "thomas.wright@vetclinic.com"
     },
-    description: "As our emergency care specialist, Dr. Wright has extensive experience handling critical and urgent veterinary situations."
+    description: "Como especialista en atención de urgencias, el Dr. Wright tiene amplia experiencia en el manejo de situaciones veterinarias críticas y urgentes."
   }
 ];
 
 const services = [
   {
-    icon: Heart,
-    title: "Preventive Care",
-    description: "Regular check-ups, vaccinations, and wellness programs to keep your pet healthy.",
-    features: ["Annual examinations", "Vaccination programs", "Parasite prevention", "Health screenings"]
-  },
-  {
     icon: Syringe,
-    title: "Surgery",
-    description: "State-of-the-art surgical procedures for both routine and complex cases.",
-    features: ["Spay & neuter", "Orthopedic surgery", "Soft tissue surgery", "Dental procedures"]
+    title: "Vacunación",
+    description: "Protege a tus mascotas contra enfermedades comunes y graves.",
+    features: [
+      "Vacunas para perros y gatos",
+      "Esquemas personalizados",
+      "Seguimiento anual"
+    ]
   },
   {
     icon: Microscope,
-    title: "Diagnostics",
-    description: "Advanced diagnostic tools for accurate and timely disease detection.",
-    features: ["Digital X-rays", "Ultrasound", "Laboratory testing", "Endoscopy"]
+    title: "Exámenes de laboratorio",
+    description: "Análisis precisos para un diagnóstico completo.",
+    features: [
+      "Análisis de sangre",
+      "Exámenes de heces y orina",
+      "Pruebas rápidas"
+    ]
+  },
+  {
+    icon: PawPrint,
+    title: "Consultas generales",
+    description: "Atención médica básica y orientación profesional.",
+    features: [
+      "Chequeos rutinarios",
+      "Evaluación de síntomas",
+      "Control de peso y salud"
+    ]
   },
   {
     icon: Shield,
-    title: "Emergency Care",
-    description: "24/7 emergency services for urgent medical situations.",
-    features: ["Critical care", "Trauma treatment", "Emergency surgery", "Intensive monitoring"]
+    title: "Desparasitación",
+    description: "Elimina parásitos internos y externos de forma segura.",
+    features: [
+      "Desparasitación interna",
+      "Control de pulgas y garrapatas",
+      "Plan de prevención mensual"
+    ]
   }
 ];
+
 
 const specialtyServices = [
   {
     icon: PawPrint,
-    title: "Exotic Pet Care",
-    description: "Specialized care for birds, reptiles, and small exotic mammals."
+    title: "Cuidado de Mascotas Exóticas",
+    description: "Atención especializada para aves, reptiles y pequeños mamíferos exóticos."
   },
   {
     icon: Thermometer,
-    title: "Internal Medicine",
-    description: "Advanced treatment for complex medical conditions."
+    title: "Medicina Interna",
+    description: "Tratamiento avanzado para condiciones médicas complejas."
   },
   {
     icon: Pill,
-    title: "Pharmacy Services",
-    description: "Full-service pharmacy for all your pet's medication needs."
+    title: "Servicios de Farmacia",
+    description: "Farmacia completa para todas las necesidades de medicación de tu mascota."
   },
   {
     icon: Clipboard,
-    title: "Behavioral Consultation",
-    description: "Expert advice for managing pet behavior issues."
+    title: "Consulta de Comportamiento",
+    description: "Asesoramiento experto para manejar problemas de conducta en mascotas."
   }
 ];
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -205,8 +223,8 @@ function App() {
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [selectedVet, setSelectedVet] = useState<Veterinarian | null>(null);
 
-  const locations: LocationType[] = ["All", "North", "South", "East", "West", "Central"];
-  const days = ["All", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const locations: LocationType[] = ["All", "Norte", "Sur", "Este", "Oeste", "Central"];
+  const days = ["All", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
 
   useEffect(() => {
     let filtered = [...veterinarians];
@@ -390,7 +408,7 @@ function App() {
                           {vet.specialty}
                         </span>
                         <span className="inline-block ml-2 text-gray-600 text-sm">
-                          {vet.experience} {vet.experience === 1 ? 'year' : 'years'} exp.
+                          {vet.experience} {vet.experience === 1 ? 'años' : 'años'} exp.
                         </span>
                       </div>
                       
@@ -413,7 +431,7 @@ function App() {
                           <span>Available on:</span>
                         </div>
                         <div className="flex flex-wrap gap-1">
-                          {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
+                          {["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"].map((day) => (
                             <span 
                               key={day}
                               className={`text-xs px-2 py-1 rounded-full ${
@@ -433,7 +451,7 @@ function App() {
                         className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md transition-colors duration-300 font-medium flex items-center justify-center"
                       >
                         <Calendar className="w-4 h-4 mr-2" />
-                        Book Appointment
+                        Reservar cita
                       </button>
                     </div>
                   </div>
@@ -443,172 +461,175 @@ function App() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-16 bg-white" id="services">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900">Our Comprehensive Services</h2>
-              <p className="mt-4 text-xl text-gray-600">
-                We offer a wide range of veterinary services to keep your pets healthy and happy
-              </p>
-            </div>
+      {/* Sección de Servicios */}
+<section className="py-16 bg-white" id="services">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900">Nuestros Servicios Veterinarios</h2>
+      <p className="mt-4 text-xl text-gray-600">
+        Ofrecemos una amplia gama de servicios veterinarios para mantener a tus mascotas sanas y felices.
+      </p>
+    </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {services.map((service, index) => {
-                const IconComponent = service.icon;
-                return (
-                  <div key={index} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
-                      <IconComponent className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-gray-600">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map((service, index) => {
+        const IconComponent = service.icon;
+        return (
+          <div key={index} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
+              <IconComponent className="w-6 h-6 text-blue-600" />
             </div>
+            <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+            <p className="text-gray-600 mb-4">{service.description}</p>
+            <ul className="space-y-2">
+              {service.features.map((feature, idx) => (
+                <li key={idx} className="flex items-center text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                  {feature}
+                </li>
+              ))}
+            </ul>
           </div>
-        </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
-        {/* Specialty Services Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900">Specialty Services</h2>
-              <p className="mt-4 text-xl text-gray-600">
-                Advanced care options for specific pet health needs
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {specialtyServices.map((service, index) => {
-                const IconComponent = service.icon;
-                return (
-                  <div key={index} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
-                      <IconComponent className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
-                );
-              })}
+      {/* Sección de Servicios Especializados */}
+<section className="py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900">Servicios Especializados</h2>
+      <p className="mt-4 text-xl text-gray-600">
+        Opciones avanzadas de cuidado para necesidades específicas de salud de tu mascota.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {specialtyServices.map((service, index) => {
+        const IconComponent = service.icon;
+        return (
+          <div key={index} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
+              <IconComponent className="w-6 h-6 text-blue-600" />
             </div>
+            <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+            <p className="text-gray-600">{service.description}</p>
           </div>
-        </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
-        {/* Emergency Services Section */}
-        <section className="py-16 bg-blue-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="p-8 lg:p-12">
-                  <div className="flex items-center mb-6">
-                    <AlertCircle className="w-8 h-8 text-red-500 mr-3" />
-                    <h2 className="text-3xl font-bold text-gray-900">24/7 Emergency Care</h2>
-                  </div>
-                  <p className="text-lg text-gray-600 mb-6">
-                    Our emergency veterinary team is available 24 hours a day, 7 days a week to provide immediate care for your pets in critical situations.
-                  </p>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0">
-                        <div className="flex items-center justify-center w-8 h-8 bg-red-100 rounded-full">
-                          <Phone className="w-4 h-4 text-red-600" />
-                        </div>
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-lg font-semibold">Emergency Hotline</h3>
-                        <p className="text-gray-600">Call (555) 911-PETS for immediate assistance</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0">
-                        <div className="flex items-center justify-center w-8 h-8 bg-red-100 rounded-full">
-                          <MapPin className="w-4 h-4 text-red-600" />
-                        </div>
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-lg font-semibold">Multiple Locations</h3>
-                        <p className="text-gray-600">Emergency care available at all our facilities</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0">
-                        <div className="flex items-center justify-center w-8 h-8 bg-red-100 rounded-full">
-                          <Shield className="w-4 h-4 text-red-600" />
-                        </div>
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-lg font-semibold">Expert Care</h3>
-                        <p className="text-gray-600">Experienced emergency veterinarians and staff</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative h-64 lg:h-auto">
-                  <img
-                    src="https://images.pexels.com/photos/6235231/pexels-photo-6235231.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="Emergency Veterinary Care"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+   {/* Sección de Servicios de Emergencia */}
+<section className="py-16 bg-blue-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="p-8 lg:p-12">
+          <div className="flex items-center mb-6">
+            <AlertCircle className="w-8 h-8 text-red-500 mr-3" />
+            <h2 className="text-3xl font-bold text-gray-900">Atención de Emergencias 24/7</h2>
+          </div>
+          <p className="text-lg text-gray-600 mb-6">
+            Nuestro equipo veterinario de emergencias está disponible las 24 horas del día, los 7 días de la semana, para brindar atención inmediata a tus mascotas en situaciones críticas.
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center w-8 h-8 bg-red-100 rounded-full">
+                  <Phone className="w-4 h-4 text-red-600" />
                 </div>
               </div>
+              <div className="ml-4">
+                <h3 className="text-lg font-semibold">Línea de Emergencia</h3>
+                <p className="text-gray-600">Llama al (555) 911-MASC para asistencia inmediata</p>
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Booking Modal */}
-      {showBookingModal && selectedVet && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-md w-full p-6">
-            <h3 className="text-xl font-semibold mb-4">Book Appointment with {selectedVet.name}</h3>
-            <p className="text-gray-600 mb-4">
-              Please select your preferred date and time to schedule an appointment.
-            </p>
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Available Days
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {selectedVet.availability.map((day) => (
-                    <span key={day} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                      {day}
-                    </span>
-                  ))}
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center w-8 h-8 bg-red-100 rounded-full">
+                  <MapPin className="w-4 h-4 text-red-600" />
                 </div>
               </div>
-              <div className="flex justify-end space-x-3">
-                <button
-                  onClick={() => setShowBookingModal(false)}
-                  className="px-4 py-2 text-gray-600 hover:text-gray-800"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={() => {
-                    alert(`Booking appointment with ${selectedVet.name}`);
-                    setShowBookingModal(false);
-                  }}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-                >
-                  Confirm Booking
-                </button>
+              <div className="ml-4">
+                <h3 className="text-lg font-semibold">Varias Sedes</h3>
+                <p className="text-gray-600">Atención de emergencias disponible en todas nuestras instalaciones</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center w-8 h-8 bg-red-100 rounded-full">
+                  <Shield className="w-4 h-4 text-red-600" />
+                </div>
+              </div>
+              <div className="ml-4">
+                <h3 className="text-lg font-semibold">Atención Experta</h3>
+                <p className="text-gray-600">Veterinarios y personal con experiencia en emergencias</p>
               </div>
             </div>
           </div>
         </div>
-      )}
+        <div className="relative h-64 lg:h-auto">
+          <img
+            src="https://images.pexels.com/photos/6235231/pexels-photo-6235231.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="Atención Veterinaria de Emergencia"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </main>
+
+     {/* Modal de Reserva */}
+{showBookingModal && selectedVet && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div className="bg-white rounded-lg max-w-md w-full p-6">
+      <h3 className="text-xl font-semibold mb-4">Reservar cita con {selectedVet.name}</h3>
+      <p className="text-gray-600 mb-4">
+        Por favor, selecciona la fecha y hora que prefieras para agendar una cita.
+      </p>
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Días disponibles
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {selectedVet.availability.map((day) => (
+              <span key={day} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                {day}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-end space-x-3">
+          <button
+            onClick={() => setShowBookingModal(false)}
+            className="px-4 py-2 text-gray-600 hover:text-gray-800"
+          >
+            Cancelar
+          </button>
+          <button
+            onClick={() => {
+              alert(`Reservando cita con ${selectedVet.name}`);
+              setShowBookingModal(false);
+            }}
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          >
+            Confirmar reserva
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

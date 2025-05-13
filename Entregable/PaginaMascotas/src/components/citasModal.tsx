@@ -26,7 +26,7 @@ function CitasModal({ isOpen, onClose }: Props) {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3306/veterinaria2025", {
+      const response = await fetch("http://localhost:3301/cita", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,16 +1,21 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
 import cors from "cors";
+import dotenv from "dotenv";
+
+// Cargar variables de entorno (.env debe tener DATABASE_URL)
+dotenv.config();
 
 const app = express();
 const prisma = new PrismaClient();
-const port = 3000;
+const port = process.env.PORT || 3001;
 
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// POST /citas — guarda los datos del formulario directamente
-app.post("/citas", async (req, res) => {
+// Ruta POST para guardar cita
+app.post("/api/cita", async (req, res) => {
   const {
     nombreDuenio,
     telefono,
@@ -45,6 +50,8 @@ app.post("/citas", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+// Iniciar servidor
+app.listen(3001, () => {
+  console.log("Servidor corriendo en http://localhost:3001");
 });
+

@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL") // Asegúrate que esté bien configurado en tu archivo `.env`
 }
 
 model Cita {
@@ -19,21 +19,4 @@ model Cita {
   fecha          DateTime
   hora           String
   creadaEn       DateTime @default(now())
-}
-
-
-model servicio {
-  id          Int    @id @default(autoincrement())
-  nombre      String
-  descripcion String
-  cita        cita[]
-}
-
-model usuario {
-  id             Int      @id @default(autoincrement())
-  nombre         String
-  apellido       String
-  correo         String   @unique(map: "Usuario_correo_key")
-  fecha_registro DateTime @default(now())
-  cita           cita[]
 }
