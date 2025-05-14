@@ -1,4 +1,3 @@
-
 import {
   Heart,
   Syringe,
@@ -10,6 +9,10 @@ import {
   MapPin,
   ChevronRight,
 } from "lucide-react"
+// Definir la animación en el estilo de React
+const styles = {
+  floatAnimation: 'animate-[float_3s_ease-in-out_infinite]',
+};
 
 export default function VeterinaryClinic() {
 
@@ -19,43 +22,87 @@ export default function VeterinaryClinic() {
 
       {/* Hero Section */}
       <section id="inicio" className="relative bg-gradient-to-r from-teal-500 to-teal-700 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 text-white mb-10 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Cuidado profesional para tu mascota</h1>
-              <p className="text-lg mb-8">
-                En CanFiru Veterinaria encontraras servicios médicos de alta calidad para asegurar la salud y bienestar de
-                tu compañero fiel.
-              </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 text-white mb-10 md:mb-0">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Cuidado profesional para tu mascota</h1>
+            <p className="text-lg mb-8">
+              En CanFiru Veterinaria encontraras servicios médicos de alta calidad para asegurar la salud y bienestar de
+              tu compañero fiel.
+            </p>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="/servicios">
-  <button className="bg-white text-teal-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
-    Nuestros Servicios
-  </button>
-</a>
+                <button className="bg-white text-teal-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
+                  Nuestros Servicios
+                </button>
+              </a>
 
-<a href="/contacto">
-  <button className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-teal-700 transition-colors">
-    Contactos
-  </button>
-</a>
+              <a href="/contacto">
+                <button className="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-teal-700 transition-colors">
+                  Contactos
+                </button>
+              </a>
+            </div>
+          </div>
+         <div className="md:w-1/2 relative">
+  <img
+    src="https://imagenes.heraldo.es/files/image_990_556/uploads/imagenes/2023/10/19/veterinario-gsc1.jpeg"
+    alt="Veterinario con mascota"
+    className={`rounded-lg shadow-xl ${styles.floatAnimation}`}
+  />
 
+            {/* Badge: Atención personalizada */}
+            <div className={`absolute -bottom-5 -right-5 bg-white p-4 rounded-lg shadow-lg ${styles.floatAnimation}`}>
+              <div className="flex items-center space-x-2">
+                <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-600">
+                  <i className="fas fa-paw"></i>
+                </div>
+                <div>
+                  <p className="text-gray-800 font-bold">Atención personalizada</p>
+                  <p className="text-xs text-gray-500">Con amor y compromiso</p>
+                </div>
               </div>
             </div>
-            <div className="md:w-1/2">
-              <img
-                src="https://imagenes.heraldo.es/files/image_990_556/uploads/imagenes/2023/10/19/veterinario-gsc1.jpeg"
-                alt="Veterinario con mascota"
-                className="rounded-lg shadow-xl"
-              />
+
+            {/* Badge: Tiempo */}
+            <div
+              className={`absolute -top-5 -left-5 bg-white p-3 rounded-lg shadow-lg ${styles.floatAnimation}`}
+              style={{ animationDelay: '0.5s' }}
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500">
+                  <i className="fas fa-clock"></i>
+                </div>
+                <div>
+                  <p className="text-gray-800 font-bold text-sm">24/7</p>
+                  <p className="text-xs text-gray-500">Emergencias</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Badge: Reseñas */}
+            <div
+              className={`absolute top-1/2 -right-10 transform -translate-y-1/2 bg-white p-3 rounded-lg shadow-lg ${styles.floatAnimation}`}
+              style={{ animationDelay: '1s' }}
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center text-teal-600">
+                  <i className="fas fa-star"></i>
+                </div>
+                <div>
+                  <p className="text-gray-800 font-bold text-sm">4.9</p>
+                  <p className="text-xs text-gray-500">500+ reseñas</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          className="absolute bottom-0 left-0 right-0 h-16 bg-white"
-          style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 0)" }}
-        ></div>
-      </section>
+      </div>
+      <div
+        className="absolute bottom-0 left-0 right-0 h-16 bg-white"
+        style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0)' }}
+      ></div>
+    </section>
 
   {/* Services Section */}
 <section id="servicios" className="py-20 bg-white">

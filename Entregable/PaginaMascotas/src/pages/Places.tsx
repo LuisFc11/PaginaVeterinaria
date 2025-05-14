@@ -5,8 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-
-// ... (interface Clinic y array clinics siguen igual)
+// nombre del mapa OpenStreetMap
 
 type Clinic = {
   id: number;
@@ -53,15 +52,76 @@ const clinics: Clinic[] = [
 { id: 23, name: "VetSalud San Miguel", address: "Av. La Marina 2275, San Miguel, Lima, Perú", latitude: -12.081005, longitude: -77.089812, premium: true, rating: 4.8, reviews: 160, distance: "1.4 km", services: ["Consultas", "Vacunación", "Farmacia"], extraServices: 2, open: true },
 { id: 24, name: "Clínica Veterinaria Huellitas", address: "Jr. Las Orquídeas 213, San Juan de Lurigancho, Lima, Perú", latitude: -12.014567, longitude: -76.999876, premium: false, rating: 4.3, reviews: 70, distance: "1.9 km", services: ["Baños", "Profilaxis"], extraServices: 0, open: true },
 { id: 25, name: "Animal House Vet", address: "Av. Brasil 3450, Magdalena del Mar, Lima, Perú", latitude: -12.089154, longitude: -77.066720, premium: false, rating: 4.5, reviews: 95, distance: "1.2 km", services: ["Consultas", "Emergencias"], extraServices: 1, open: true },
+// ----- AREQUIPA -----
+  { id: 26, name: "Clínica Veterinaria Arequipa",      address: "Calle Santa Catalina 300, Arequipa, Perú",       latitude: -16.409000, longitude: -71.535000, premium: false, rating: 4.6, reviews: 110, distance: "0.8 km", services: ["Emergencias", "Consultas"], extraServices: 1, open: true },
+  { id: 27, name: "Clínica Veterinaria Los Perros",    address: "Calle San Martín 507, Arequipa, Perú",           latitude: -16.400000, longitude: -71.540000, premium: false, rating: 4.5, reviews: 75,  distance: "1.1 km", services: ["Vacunación", "Radiografía"], extraServices: 1, open: true },
+  { id: 28, name: "Veterinaria BestVet",               address: "Jr. Los Nogales 230, Arequipa, Perú",           latitude: -16.394500, longitude: -71.529800, premium: false, rating: 4.4, reviews: 90,  distance: "1.3 km", services: ["Consultas", "Farmacia"], extraServices: 0, open: true },
+  { id: 29, name: "Clínica Veterinaria El Canino Feliz", address: "Calle Bolívar 122, Arequipa, Perú",              latitude: -16.392100, longitude: -71.536400, premium: false, rating: 4.3, reviews: 60,  distance: "1.5 km", services: ["Cirugía", "Baños"], extraServices: 1, open: true },
+
+  // ----- TRUJILLO -----
+  { id: 30, name: "Clínica Veterinaria Trujillo",      address: "Av. España 150, Trujillo, Perú",                latitude: -8.113500, longitude: -79.029800, premium: false, rating: 4.7, reviews: 130, distance: "0.6 km", services: ["Consultas", "Vacunación"], extraServices: 2, open: true },
+  { id: 31, name: "Clínica Veterinaria Los Andes",     address: "Jr. Zepita 720, Trujillo, Perú",               latitude: -8.110200, longitude: -79.033500, premium: false, rating: 4.5, reviews: 95,  distance: "0.9 km", services: ["Emergencias", "Radiografía"], extraServices: 1, open: true },
+  { id: 32, name: "Veterinaria Pet House",             address: "Av. Manuel Vera Enríquez 1050, Trujillo, Perú", latitude: -8.110500, longitude: -79.034000, premium: false, rating: 4.6, reviews: 120, distance: "1.2 km", services: ["Profilaxis", "Consultas"], extraServices: 0, open: true },
+  { id: 33, name: "Veterinaria Mi Mascota",            address: "Calle Junín 411, Trujillo, Perú",              latitude: -8.111300, longitude: -79.037100, premium: false, rating: 4.4, reviews: 80,  distance: "1.5 km", services: ["Baños", "Farmacia"], extraServices: 1, open: true },
+
+  // ----- PIURA -----
+  { id: 34, name: "Clínica Veterinaria Piura",         address: "Calle Libertad 540, Piura, Perú",              latitude: -5.194000, longitude: -80.632000, premium: false, rating: 4.8, reviews: 150, distance: "0.7 km", services: ["Emergencias", "Consultas"], extraServices: 2, open: true },
+  { id: 35, name: "Veterinaria Los Amigos",            address: "Av. Panamericana Norte 1020, Piura, Perú",      latitude: -5.192000, longitude: -80.633400, premium: false, rating: 4.7, reviews: 140, distance: "1.1 km", services: ["Baños", "Radiografía"], extraServices: 1, open: true },
+  { id: 36, name: "Clínica Veterinaria San Juan",      address: "Jr. Sánchez Cerro 412, Piura, Perú",            latitude: -5.193300, longitude: -80.637500, premium: false, rating: 4.6, reviews: 110, distance: "1.3 km", services: ["Vacunación", "Consultas"], extraServices: 2, open: true },
+  { id: 37, name: "Veterinaria El Buen Pastor",        address: "Av. Las Gardenias 120, Piura, Perú",           latitude: -5.190000, longitude: -80.630000, premium: false, rating: 4.5, reviews: 80,  distance: "1.5 km", services: ["Farmacia", "Consultas"], extraServices: 1, open: true },
+
+  // ----- ICA -----
+  { id: 38, name: "Clínica Veterinaria de Ica",        address: "Av. San Martín 320, Ica, Perú",                latitude: -13.421500, longitude: -75.726000, premium: false, rating: 4.7, reviews: 115, distance: "0.8 km", services: ["Emergencias", "Consultas"], extraServices: 1, open: true },
+  { id: 39, name: "Veterinaria Los Andes",             address: "Calle Perú 404, Ica, Perú",                   latitude: -13.418900, longitude: -75.723200, premium: false, rating: 4.6, reviews: 90,  distance: "1.0 km", services: ["Cirugía", "Vacunación"], extraServices: 2, open: true },
+  { id: 40, name: "Clínica Veterinaria Pet Love",       address: "Av. América Sur 540, Ica, Perú",               latitude: -13.416300, longitude: -75.719000, premium: false, rating: 4.5, reviews: 80,  distance: "1.2 km", services: ["Profilaxis", "Consultas"], extraServices: 1, open: true },
+  { id: 41, name: "Veterinaria Mis Amigos",            address: "Jr. Bolívar 513, Ica, Perú",                   latitude: -13.418100, longitude: -75.720300, premium: false, rating: 4.4, reviews: 75,  distance: "1.3 km", services: ["Baños", "Farmacia"], extraServices: 0, open: true },
+
+  // ----- CHICLAYO -----
+  { id: 42, name: "Clínica Veterinaria Chiclayo",      address: "Calle José Leonardo Ortiz 540, Chiclayo, Perú", latitude: -6.766700, longitude: -79.838800, premium: false, rating: 4.6, reviews: 120, distance: "0.7 km", services: ["Emergencias", "Consultas"], extraServices: 2, open: true },
+  { id: 43, name: "Veterinaria PetCenter",             address: "Av. José Abelardo Quiñones 500, Chiclayo, Perú", latitude: -6.768300, longitude: -79.839600, premium: false, rating: 4.7, reviews: 135, distance: "0.9 km", services: ["Vacunación", "Radiografía"], extraServices: 1, open: true },
+  { id: 44, name: "Clínica Veterinaria Los Pinos",     address: "Calle Las Américas 680, Chiclayo, Perú",         latitude: -6.767100, longitude: -79.841200, premium: false, rating: 4.5, reviews: 110, distance: "1.1 km", services: ["Consultas", "Farmacia"], extraServices: 0, open: true },
+  { id: 45, name: "Veterinaria El Buen Gato",          address: "Jr. Cuzco 520, Chiclayo, Perú",                 latitude: -6.765000, longitude: -79.840400, premium: false, rating: 4.4, reviews: 80,  distance: "1.4 km", services: ["Baños", "Profilaxis"], extraServices: 1, open: true },
+ // ----- PASCO -----
+  { id: 46, name: "Clínica Veterinaria Pasco",        address: "Jr. 28 de Julio 400, Pasco, Perú",            latitude: -10.599500, longitude: -76.202200, premium: false, rating: 4.6, reviews: 85, distance: "0.7 km", services: ["Consultas", "Vacunación"], extraServices: 1, open: true },
+  { id: 47, name: "Veterinaria La Estrella",          address: "Av. Libertad 250, Pasco, Perú",               latitude: -10.600200, longitude: -76.204000, premium: false, rating: 4.5, reviews: 70,  distance: "1.0 km", services: ["Emergencias", "Farmacia"], extraServices: 0, open: true },
+  { id: 48, name: "Clínica Veterinaria Los Andes",     address: "Calle Sucre 300, Pasco, Perú",               latitude: -10.597800, longitude: -76.199500, premium: false, rating: 4.7, reviews: 110, distance: "1.2 km", services: ["Baños", "Profilaxis"], extraServices: 2, open: true },
+  { id: 49, name: "Veterinaria Mis Mascotas",         address: "Calle Manuel Gonzales 150, Pasco, Perú",     latitude: -10.598000, longitude: -76.200800, premium: false, rating: 4.4, reviews: 95,  distance: "1.3 km", services: ["Consultas", "Radiografía"], extraServices: 1, open: true },
+
+  // ----- HUANCAYO -----
+  { id: 50, name: "Clínica Veterinaria Huancayo",      address: "Av. Ferrocarril 500, Huancayo, Perú",        latitude: -12.068300, longitude: -75.204400, premium: false, rating: 4.8, reviews: 180, distance: "0.5 km", services: ["Consultas", "Vacunación"], extraServices: 2, open: true },
+  { id: 51, name: "Veterinaria El Buen Amigo",        address: "Jr. San Martín 250, Huancayo, Perú",         latitude: -12.067000, longitude: -75.206000, premium: false, rating: 4.7, reviews: 160, distance: "0.8 km", services: ["Emergencias", "Farmacia"], extraServices: 1, open: true },
+  { id: 52, name: "Clínica Veterinaria La Casa de los Animales", address: "Calle Comercio 300, Huancayo, Perú", latitude: -12.070000, longitude: -75.205500, premium: false, rating: 4.6, reviews: 120, distance: "1.0 km", services: ["Consultas", "Baños"], extraServices: 0, open: true },
+  { id: 53, name: "Veterinaria Sonrisas",             address: "Av. Ricardo Palma 450, Huancayo, Perú",      latitude: -12.069500, longitude: -75.207100, premium: false, rating: 4.5, reviews: 100, distance: "1.2 km", services: ["Radiografía", "Consultas"], extraServices: 1, open: true },
 
 ];
 
 
 // Centros de ciudad para recentrado del mapa
 const cityCenters: Record<string, [number, number]> = {
-  huanuco: [-9.933216, -76.242117],
-  cusco: [-13.5216, -71.9675],
-  lima: [-12.0464, -77.0428],
+ amazonas: [-6.2310, -77.8700],       // Chachapoyas
+  ancash: [-9.5278, -77.5287],         // Huaraz
+  apurimac: [-13.6333, -72.8833],      // Abancay
+  arequipa: [-16.3989, -71.5350],      // Arequipa
+  ayacucho: [-13.1588, -74.2239],      // Ayacucho
+  cajamarca: [-7.1500, -78.5167],      // Cajamarca
+  callao: [-12.0500, -77.1333],        // Callao
+  cusco: [-13.5319, -71.9675],         // Cusco
+  huancavelica: [-12.7861, -74.9769],  // Huancavelica
+  huanuco: [-9.9306, -76.2422],        // Huánuco
+  ica: [-14.0681, -75.7256],           // Ica
+  huancayo: [-12.0691, -75.2023],         // Huancayo
+  trujillo: [-8.1119, -79.0288],    // Trujillo
+  lambayeque: [-6.7714, -79.8409],     // Chiclayo
+  lima: [-12.0464, -77.0428],          // Lima
+  loreto: [-3.7491, -73.2538],         // Iquitos
+  moquegua: [-17.1947, -70.9350],      // Moquegua
+  pasco: [-10.6864, -76.2560],         // Cerro de Pasco
+  piura: [-5.1945, -80.6328],          // Piura
+  puno: [-15.8402, -70.0219],          // Puno
+  san_martin: [-6.4926, -76.3652],     // Moyobamba
+  tacna: [-18.0066, -70.2463],         // Tacna
+  tumbes: [-3.5669, -80.4515],         // Tumbes
+  ucayali: [-8.3791, -74.5539],        // Pucallpa
 };
 
 // Normaliza textos para búsqueda
